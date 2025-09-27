@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Finder – Leaflet + OpenStreetMap</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <h1>☕ Café Finder</h1>
+      <div class="search">
+        <input id="searchInput" type="text" placeholder="Search a place (e.g., Colombo Fort, Petaling Jaya)"/>
+        <button class="btn" id="searchBtn" title="Search location">Search</button>
+      </div>
+      <button class="btn secondary" id="locateBtn" title="Use my location">Use My Location</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="panel">
+      <header><h2>Nearby cafés</h2></header>
+      <div class="controls">
+        <label class="control">
+          Radius: <span id="radiusLabel">1500</span> m
+          <input id="radius" type="range" min="300" max="4000" step="100" value="1500" style="width:100%">
+        </label>
+        <label class="control">
+          Max results: <span id="limitLabel">30</span>
+          <input id="limit" type="range" min="5" max="80" step="5" value="30" style="width:100%">
+        </label>
+      </div>
+      <div id="results" class="results" role="list"></div>
+    </aside>
+
+    <section id="map"></section>
+  </main>
+
+  <footer>
+    2025 © Abdullah Farzan · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors · Tiles by OSM · Built with <a href="https://leafletjs.com/" target="_blank" rel="noreferrer">Leaflet</a>.
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="./app.js"></script>
+</body>
+</html>
